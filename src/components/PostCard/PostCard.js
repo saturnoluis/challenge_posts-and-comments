@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function PostCard({ id, title, body }) {
   return(
     <article data-testid="PostCard">
-      <h1>{title}</h1>
+      <Link to={`/post/${id}`}>
+        <h1>{title}</h1>
+      </Link>
       <p>
         {body}
       </p>
