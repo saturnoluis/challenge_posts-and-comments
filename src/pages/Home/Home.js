@@ -7,7 +7,7 @@ const dummyPosts = [
 
 export default function Home () {
   return (
-    <main role="main">
+    <main data-testid="Home" role="main">
       <Feed posts={dummyPosts} />
     </main>
   );

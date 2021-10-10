@@ -2,12 +2,11 @@ import { render } from '@testing-library/react';
 import Home from '.';
 
 describe('<Home />', () => {
-  it('renders one main element', () => {
+  it('renders in the main wrapper "Home"', () => {
     const component = render(<Home />);
 
-    const main = component.getAllByRole('main');
-
-    expect(main.length).toBe(1);
+    component.getByRole('main');
+    component.getByTestId('Home');
   });
 
   it('renders one Feed component', () => {
