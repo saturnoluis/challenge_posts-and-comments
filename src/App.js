@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/Home';
-import Post from './pages/PostDetail';
+import Single from './pages/Single';
 
 import './App.css';
 
@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/post/:id" component={Post} />
+          <Route exact path="/post/:id" component={Single} />
           <Route path="*" component={Home} />
         </Switch>
       </div>
