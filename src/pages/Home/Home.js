@@ -1,14 +1,20 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { fetchPosts, selectPosts } from '../../store/slice/feed';
 import Feed from "../../components/Feed";
 
-const dummyPosts = [
-  { id: 1, title: 'First title', body: 'First body' },
-  { id: 2, title: 'Second title', body: 'Second body' },
-];
-
 export default function Home () {
+  const posts = useSelector(selectPosts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [posts, dispatch]);
+
   return (
     <main data-testid="Home" role="main">
-      <Feed posts={dummyPosts} />
+      <Feed posts={posts} />
     </main>
   );
 }
