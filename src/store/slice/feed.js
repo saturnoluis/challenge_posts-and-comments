@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { setEndLoading, setStartLoading } from './loading';
 
 const dummyPosts = [
   { id: 1, title: 'First title', body: 'First body' },
@@ -9,35 +10,33 @@ const dummyPosts = [
 const slice = createSlice({
   name: 'feed',
   initialState: {
-    posts: [],
-    loading: false,
+    data: [],
+    requested: false,
   },
   reducers: {
-    setPosts: (state, action) => {
-      state.posts = action.payload;
+    setFeed: (state, action) => {
+      state.data = action.payload;
+      state.requested = true;
     },
-    toggleLoading: state => {
-      state.loading = !state.loading;
-    }
   },
 });
 
 // Selectors
-export const selectPosts = state => state.feed.posts;
-export const selectLoading = state => state.feed.loading;
+export const selectFeed = state => state.feed.data;
+export const selectRequested = state => state.feed.requested;
 
 // Thunks
-export const fetchPosts = () => dispatch => {
-  dispatch(toggleLoading());
+export const requestFeed = () => dispatch => {
+  dispatch(setStartLoading());
 
   setTimeout(() => {
-    dispatch(setPosts(dummyPosts));
-    dispatch(toggleLoading());
+    dispatch(setFeed(dummyPosts));
+    dispatch(setEndLoading());
   }, 2000);
 };
 
 // Actions
-export const { setPosts, toggleLoading } = slice.actions;
+export const { setFeed } = slice.actions;
 
 // Reducer
 export default slice.reducer;
