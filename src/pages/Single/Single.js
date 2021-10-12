@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { requestSingle, selectRequested, selectSingle } from '../../store/slice/single';
+import { cleanSingle, requestSingle, selectRequested, selectSingle } from '../../store/slice/single';
 import { selectLoading } from '../../store/slice/loading';
 import Comments from '../../components/Comments';
 
@@ -19,6 +19,10 @@ export default function Single ({ match }) {
       dispatch(requestSingle(Number.parseInt(id)));
     }
   }, [id, requested, dispatch])
+
+  useEffect(() => {
+    return () => dispatch(cleanSingle());
+  }, [dispatch]);
 
   return (
     <main data-testid="Single" role="main">

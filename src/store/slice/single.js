@@ -1,24 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setEndLoading, setStartLoading } from './loading';
-
-const dummySingle = { userId: 13, title: 'Dummy title', body: 'Dummy body lorem ipsum' };
+import { getSingle } from '../../service';
 
 // Slice definition
 const slice = createSlice({
   name: 'single',
   initialState: {
-    data: {
-      id: null,
-      userId: null,
-      title: '',
-      body: '',
-    },
+    data: {},
     requested: false,
   },
   reducers: {
     setSingle: (state, action) => {
       state.data = action.payload;
-      state.requested = true
+      state.requested = true;
+    },
+    cleanSingle: state => {
+      state.data = {};
+      state.requested = false;
     },
   },
 });
@@ -30,15 +28,15 @@ export const selectRequested = state => state.single.requested;
 // Thunks
 export const requestSingle = id => dispatch => {
   dispatch(setStartLoading());
-
-  setTimeout(() => {
-    dispatch(setSingle({ id, ...dummySingle, }));
+  
+  getSingle(id).then((single) => {
+    dispatch(setSingle(single));
     dispatch(setEndLoading());
-  }, 2000);
+  });
 };
 
 // Actions
-export const { setSingle } = slice.actions;
+export const { setSingle, cleanSingle } = slice.actions;
 
 // Reducer
 export default slice.reducer;

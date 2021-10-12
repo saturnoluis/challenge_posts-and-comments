@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { requestComments, selectRequested, selectComments } from '../../store/slice/comments';
+import { requestComments, selectRequested, selectComments, cleanComments } from '../../store/slice/comments';
 import { selectLoading } from '../../store/slice/loading';
 
 export default function Comments ({ postId }) {
@@ -16,6 +16,10 @@ export default function Comments ({ postId }) {
       dispatch(requestComments(postId));
     }
   }, [postId, requested, dispatch])
+
+  useEffect(() => {
+    return () => dispatch(cleanComments());
+  }, [postId, dispatch]);
 
   return (
     <aside className="Comments">

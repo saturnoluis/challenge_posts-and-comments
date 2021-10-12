@@ -1,16 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setEndLoading, setStartLoading } from './loading';
-
-const dummyComments = [
-  {
-    postId: 1,
-    id: 1,
-    name: "id labore ex et quam laborum",
-    email: "Eliseo@gardner.biz",
-    body: "laudantium enim quasi es…am sapiente accusantium",
-  },
-];
-
+import { getComments } from '../../service';
 // Slice definition
 const slice = createSlice({
   name: 'comments',
@@ -23,6 +13,10 @@ const slice = createSlice({
       state.data = action.payload;
       state.requested = true;
     },
+    cleanComments: state => {
+      state.data = [];
+      state.requested = false;
+    }
   },
 });
 
@@ -34,14 +28,14 @@ export const selectRequested = state => state.comments.requested;
 export const requestComments = postId => dispatch => {
   dispatch(setStartLoading());
 
-  setTimeout(() => {
-    dispatch(setComments(dummyComments));
+  getComments(postId).then(comments => {
+    dispatch(setComments(comments));
     dispatch(setEndLoading());
-  }, 2000);
+  });
 };
 
 // Actions
-export const { setComments } = slice.actions;
+export const { setComments, cleanComments } = slice.actions;
 
 // Reducer
 export default slice.reducer;
