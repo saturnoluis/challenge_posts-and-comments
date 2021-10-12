@@ -16,7 +16,7 @@ export default function Single ({ match }) {
 
   useEffect(() => {
     if(!requested) {
-      dispatch(requestSingle(id));
+      dispatch(requestSingle(Number.parseInt(id)));
     }
   }, [id, requested, dispatch])
 

@@ -12,7 +12,7 @@ export default function Comments ({ postId }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(!requested) {
+    if(!requested && postId) {
       dispatch(requestComments(postId));
     }
   }, [postId, requested, dispatch])
@@ -37,5 +37,5 @@ export default function Comments ({ postId }) {
 }
 
 Comments.propTypes = {
-  postId: PropTypes.number.isRequired,
+  postId: PropTypes.number,
 };
