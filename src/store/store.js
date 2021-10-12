@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import loadingReducer from './slice/loading';
-import feedReducer from './slice/feed';
-import singleReducer from './slice/single';
+import loading from './slice/loading';
+import feed from './slice/feed';
+import single from './slice/single';
+import comments from './slice/comments';
 
 export default configureStore({
   reducer: {
-    loading: loadingReducer,
-    feed: feedReducer,
-    single: singleReducer,
+    loading,
+    feed,
+    single,
+    comments,
   },
 });
