@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setEndLoading, setStartLoading } from './loading';
 import { getComments } from '../../service';
+
 // Slice definition
 const slice = createSlice({
   name: 'comments',
@@ -16,7 +17,7 @@ const slice = createSlice({
     cleanComments: state => {
       state.data = [];
       state.requested = false;
-    }
+    },
   },
 });
 
