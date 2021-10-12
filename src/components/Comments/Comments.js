@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { requestComments, selectRequested, selectComments, cleanComments } from '../../store/slice/comments';
 import { selectLoading } from '../../store/slice/loading';
+import Spinner from '../Spinner';
 
 export default function Comments ({ postId }) {
   const comments = useSelector(selectComments);
@@ -24,7 +25,7 @@ export default function Comments ({ postId }) {
   return (
     <aside className="Comments">
       {loading
-        ? <h2>Loading comments...</h2>
+        ? <Spinner />
         : <ul>
             {comments.map(({ id, name, email, body }) =>
               <li key={id}>

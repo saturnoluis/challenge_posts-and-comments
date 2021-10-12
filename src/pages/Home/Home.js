@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { requestFeed, selectRequested, selectFeed } from '../../store/slice/feed';
 import { selectLoading } from '../../store/slice/loading';
 import Feed from "../../components/Feed";
+import Spinner from '../../components/Spinner';
 
 export default function Home () {
   const posts = useSelector(selectFeed);
@@ -20,7 +21,7 @@ export default function Home () {
   return (
     <main data-testid="Home" role="main">
       {loading
-        ? <h1>Loading...</h1>
+        ? <Spinner />
         : <Feed posts={posts} />
       }
     </main>
