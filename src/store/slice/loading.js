@@ -3,15 +3,19 @@ import { createSlice } from '@reduxjs/toolkit'
 // Slice definition
 const slice = createSlice({
   name: 'loading',
-  initialState: false,
+  initialState: {},
   reducers: {
-    setStartLoading: state => true,
-    setEndLoading: state => false,
+    setStartLoading: (state, action) => {
+      state[action.payload] = true;
+    },
+    setEndLoading: (state, action) => {
+      state[action.payload] = false;
+    },
   },
 });
 
 // Selectors
-export const selectLoading = state => state.loading;
+export const selectLoading = id => state => state.loading[id];
 
 // Actions
 export const { setStartLoading, setEndLoading } = slice.actions;

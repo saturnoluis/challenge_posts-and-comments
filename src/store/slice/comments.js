@@ -26,11 +26,11 @@ export const selectRequested = state => state.comments.requested;
 
 // Thunks
 export const requestComments = postId => dispatch => {
-  dispatch(setStartLoading());
+  dispatch(setStartLoading('comments'));
 
   getComments(postId).then(comments => {
     dispatch(setComments(comments));
-    dispatch(setEndLoading());
+    dispatch(setEndLoading('comments'));
   });
 };
 

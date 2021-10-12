@@ -27,11 +27,11 @@ export const selectRequested = state => state.single.requested;
 
 // Thunks
 export const requestSingle = id => dispatch => {
-  dispatch(setStartLoading());
+  dispatch(setStartLoading('single'));
   
   getSingle(id).then((single) => {
     dispatch(setSingle(single));
-    dispatch(setEndLoading());
+    dispatch(setEndLoading('single'));
   });
 };
 

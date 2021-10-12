@@ -8,7 +8,7 @@ import { selectLoading } from '../../store/slice/loading';
 export default function Comments ({ postId }) {
   const comments = useSelector(selectComments);
   const requested = useSelector(selectRequested);
-  const loading = useSelector(selectLoading);
+  const loading = useSelector(selectLoading('comments'));
   const dispatch = useDispatch();
 
   useEffect(() => {

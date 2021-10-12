@@ -11,7 +11,7 @@ export default function Single ({ match }) {
 
   const single = useSelector(selectSingle);
   const requested = useSelector(selectRequested);
-  const loading = useSelector(selectLoading);
+  const loading = useSelector(selectLoading('single'));
   const dispatch = useDispatch();
 
   useEffect(() => {

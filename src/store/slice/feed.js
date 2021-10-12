@@ -23,11 +23,11 @@ export const selectRequested = state => state.feed.requested;
 
 // Thunks
 export const requestFeed = () => dispatch => {
-  dispatch(setStartLoading());
+  dispatch(setStartLoading('feed'));
 
   getFeed().then((feed) => {
     dispatch(setFeed(feed));
-    dispatch(setEndLoading());
+    dispatch(setEndLoading('feed'));
   });
 };
 

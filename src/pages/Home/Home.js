@@ -8,7 +8,7 @@ import Feed from "../../components/Feed";
 export default function Home () {
   const posts = useSelector(selectFeed);
   const requested = useSelector(selectRequested);
-  const loading = useSelector(selectLoading);
+  const loading = useSelector(selectLoading('feed'));
   const dispatch = useDispatch();
   
   useEffect(() => {
