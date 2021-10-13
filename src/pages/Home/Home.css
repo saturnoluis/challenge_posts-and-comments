@@ -1,5 +1,5 @@
 .Home {
-  height: fit-content;
+  min-height: fit-content;
   width: 78em;
 }
 
@@ -9,4 +9,11 @@
   text-align: center;
   margin: 2em 0 1em 0;
   font-size: 6em;
+}
+
+@media (max-width: 800px) {
+  .Home {
+    width: 96vw;
+    margin: 0 auto;
+  }  
 }

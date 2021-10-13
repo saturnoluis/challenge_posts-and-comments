@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App App--dark">
+      <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/post/:id" component={Single} />

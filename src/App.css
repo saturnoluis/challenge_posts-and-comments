@@ -7,3 +7,9 @@
   background: rgb(29,27,40);
   background: linear-gradient(0deg, var(--bg-color-2) 0%, var(--bg-color) 60%); 
 }
+
+@media (max-width: 360px) {
+  .App {
+    font-size: 8px;
+  }
+}

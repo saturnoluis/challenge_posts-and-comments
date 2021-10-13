@@ -34,9 +34,9 @@ export default function Single ({ match }) {
         ? <Spinner />
         : <>
             <article className="Single__post">
+              <Link className="Single__go-back" to="/">⮘ BACK</Link>
               <h1 className="Single__title">{single.title}</h1>
               <p className="Single__body">{single.body}</p>
-              <Link className="Single__go-back" to="/">⮘ BACK</Link>
               <div className="Single__hero">
                 <img src={`https://picsum.photos/id/${id}/240/240`} alt={single.title} />
               </div>
