@@ -73,13 +73,13 @@ export default function CommentsForm ({ postId }) {
           <p className="CommentsForm__error-msg">
             {valid ? null : '🛈 Please enter all fields before submitting.' }
           </p>
+          {submitting ? <Spinner /> : null}
           <button
             className="CommentsForm__button"
             onClick={submit}
           >
               Submit
           </button>
-          {submitting ? <Spinner /> : null}
         </form>
     }
     </>

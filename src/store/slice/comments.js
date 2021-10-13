@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setEndLoading, setStartLoading } from './loading';
-import { getComments } from '../../service';
+import { getComments, postNewComment } from '../../service';
 
 // Slice definition
 const slice = createSlice({
@@ -15,8 +15,7 @@ const slice = createSlice({
       state.requested = true;
     },
     addComment: (state, action) => {
-      const { postId, name, email, body } = action.payload;
-      const id = state.data.length + 1;
+      const { id, postId, name, email, body } = action.payload;
       state.data.push({id, postId, name, email, body});
     },
     cleanComments: state => {
@@ -44,8 +43,8 @@ export const submitComment = comment => dispatch => {
   const { postId, name, email, body } = comment;
   dispatch(setStartLoading('comment-submit'));
 
-  setTimeout(() => {
-    dispatch(addComment({ postId, name, email, body }));
+  postNewComment(postId, name, email, body).then(newComment => {
+    dispatch(addComment(newComment));
     dispatch(setEndLoading('comment-submit'))
   }, 2000);
 } 
