@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { cleanSingle, requestSingle, selectRequested, selectSingle } from '../../store/slice/single';
 import { selectLoading } from '../../store/slice/loading';
+import CommentsForm from '../../components/CommentsForm';
+import BackToTop from '../../components/BackToTop';
 import Comments from '../../components/Comments';
 import Spinner from '../../components/Spinner';
 
@@ -42,6 +44,8 @@ export default function Single ({ match }) {
               </div>
             </article>
             <Comments postId={single.id} />
+            <CommentsForm />
+            <BackToTop />
           </>
       }
     </main>

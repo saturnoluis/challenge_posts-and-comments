@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { requestComments, selectRequested, selectComments, cleanComments } from '../../store/slice/comments';
 import { selectLoading } from '../../store/slice/loading';
 import Spinner from '../Spinner';
-import BackToTop from '../BackToTop';
 
 import './Comments.css';
 
@@ -29,21 +28,18 @@ export default function Comments ({ postId }) {
     <>
       {loading 
         ? <Spinner />
-        : <>
-            <aside className="Comments">
-              <span className="Comments__title">Comments</span>
-              <ul className="Comments__list">
-                {comments.map(({ id, name, email, body }) =>
-                  <li className="Comments__single" key={id}>
-                    <p className="Comments__single__name">{name}</p>
-                    <p className="Comments__single__body">"{body}"</p>
-                    <p className="Comments__single__email">{email}</p>
-                  </li>
-                )}
-              </ul>
-            </aside>
-            <BackToTop />
-          </>
+        : <aside className="Comments">
+            <span className="Comments__title">Comments</span>
+            <ul className="Comments__list">
+              {comments.map(({ id, name, email, body }) =>
+                <li className="Comments__single" key={id}>
+                  <p className="Comments__single__name">{name}</p>
+                  <p className="Comments__single__body">"{body}"</p>
+                  <p className="Comments__single__email">{email}</p>
+                </li>
+              )}
+            </ul>
+          </aside>
       }
     </>
   );
