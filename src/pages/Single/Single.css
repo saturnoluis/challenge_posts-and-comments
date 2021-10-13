@@ -15,12 +15,14 @@
   font-family: var(--title-font);
   font-size: 4em;
   text-transform: capitalize;
+  line-height: 1em;
 }
 
 .Single__body {
   font-family: var(--body-font);
   font-size: 2em;
   text-transform: capitalize;
+  line-height: 1.8em;
 }
 
 .Single__hero {
