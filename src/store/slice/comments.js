@@ -14,6 +14,11 @@ const slice = createSlice({
       state.data = action.payload;
       state.requested = true;
     },
+    addComment: (state, action) => {
+      const { postId, name, email, body } = action.payload;
+      const id = state.data.length + 1;
+      state.data.push({id, postId, name, email, body});
+    },
     cleanComments: state => {
       state.data = [];
       state.requested = false;
@@ -25,7 +30,7 @@ const slice = createSlice({
 export const selectComments = state => state.comments.data;
 export const selectRequested = state => state.comments.requested;
 
-// Thunks
+// ThunkspostId
 export const requestComments = postId => dispatch => {
   dispatch(setStartLoading('comments'));
 
@@ -35,8 +40,18 @@ export const requestComments = postId => dispatch => {
   });
 };
 
+export const submitComment = comment => dispatch => {
+  const { postId, name, email, body } = comment;
+  dispatch(setStartLoading('comment-submit'));
+
+  setTimeout(() => {
+    dispatch(addComment({ postId, name, email, body }));
+    dispatch(setEndLoading('comment-submit'))
+  }, 2000);
+} 
+
 // Actions
-export const { setComments, cleanComments } = slice.actions;
+export const { setComments, addComment, cleanComments } = slice.actions;
 
 // Reducer
 export default slice.reducer;

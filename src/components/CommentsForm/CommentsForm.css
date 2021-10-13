@@ -48,6 +48,12 @@
   background-color: var(--main-bg-color);
 }
 
+.CommentsForm__error-msg {
+  font-size: 2em;
+  margin: 0;
+  font-family: var(--body-font);
+}
+
 .CommentsForm__button {
   background: var(--bg-color);
   font-size: 2em;
@@ -63,9 +69,17 @@
   width: 8em;
   padding: .5em;
   align-self: flex-end;
+  margin-bottom: 2em;
 }
 
 .CommentsForm__button:hover {
   color: var(--link-color);
   border-color: var(--link-color);
+}
+
+@media (max-width:380px) {
+  .CommentsForm__error-msg {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+  }
 }

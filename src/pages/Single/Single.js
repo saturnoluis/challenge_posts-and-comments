@@ -13,7 +13,8 @@ import Spinner from '../../components/Spinner';
 import './Single.css';
 
 export default function Single ({ match }) {
-  const { id } = match.params;
+  const { id: postId } = match.params;
+  const id = Number.parseInt(postId);
 
   const single = useSelector(selectSingle);
   const requested = useSelector(selectRequested);
@@ -22,7 +23,7 @@ export default function Single ({ match }) {
 
   useEffect(() => {
     if(!requested) {
-      dispatch(requestSingle(Number.parseInt(id)));
+      dispatch(requestSingle(id));
     }
   }, [id, requested, dispatch])
 
@@ -43,8 +44,8 @@ export default function Single ({ match }) {
                 <img src={`https://picsum.photos/id/${id}/240/240`} alt={single.title} />
               </div>
             </article>
-            <Comments postId={single.id} />
-            <CommentsForm />
+            <Comments postId={id} />
+            <CommentsForm postId={id} />
             <BackToTop />
           </>
       }
