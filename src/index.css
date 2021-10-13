@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Merriweather:ital:wght@300&display=swap');
 
 body {
   margin: 0;
@@ -19,7 +19,7 @@ code {
 
 .body--dark {
   --bg-color: #151515;
-  --bg-color-2: #252525;
+  --bg-color-2: #353535;
 
   --main-bg-color: #151515;
   --main-shadow-color: #151515;

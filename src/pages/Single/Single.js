@@ -38,7 +38,7 @@ export default function Single ({ match }) {
               <p className="Single__body">{single.body}</p>
               <Link className="Single__go-back" to="/">⮘ BACK</Link>
               <div className="Single__hero">
-                <img src={`https://picsum.photos/id/${single.id}/240/240`} alt={single.title} />
+                <img src={`https://picsum.photos/id/${id}/240/240`} alt={single.title} />
               </div>
             </article>
             <Comments postId={single.id} />

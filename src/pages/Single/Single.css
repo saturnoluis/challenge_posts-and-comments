@@ -5,10 +5,11 @@
 
 .Single__post {
   position: relative;
-  margin: 24em 0 10em 0;
+  margin: 24em 0 8em 0;
   background-color: var(--main-bg-color);
-  padding: 6em 5em 3em 5em;
+  padding: 8em 4em 4em 4em;
   border: 1px solid var(--border-color);
+  box-shadow: 0em 0em 8em var(--main-shadow-color);
 }
 
 .Single__title {
@@ -44,7 +45,7 @@
 .Single__go-back {
   position: absolute;
   top: -3em;
-  left: -2em;
+  left: -3em;
   text-decoration: none;
   color: var(--link-color);
   font-size: 1.6em;
