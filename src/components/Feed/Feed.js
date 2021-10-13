@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import PostCard from '../PostCard';
 
+import './Feed.css';
+
 export default function Feed ({ posts }) {
   return (
-    <ul data-testid="Feed">
+    <ul className="Feed">
       {posts.map(({ id, title, body }) =>
-        <li key={id}>
+        <li className="Feed__list-item" key={id}>
           <PostCard id={id} title={title} body={body} />
         </li>
       )}

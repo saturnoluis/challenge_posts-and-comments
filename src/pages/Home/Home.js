@@ -5,6 +5,9 @@ import { requestFeed, selectRequested, selectFeed } from '../../store/slice/feed
 import { selectLoading } from '../../store/slice/loading';
 import Feed from "../../components/Feed";
 import Spinner from '../../components/Spinner';
+import BackToTop from '../../components/BackToTop';
+
+import './Home.css';
 
 export default function Home () {
   const posts = useSelector(selectFeed);
@@ -19,10 +22,14 @@ export default function Home () {
   }, [requested, dispatch]);
 
   return (
-    <main data-testid="Home" role="main">
+    <main className="Home" role="main">
       {loading
         ? <Spinner />
-        : <Feed posts={posts} />
+        : <>
+            <h1 role="presentation" className="Home__title">Lorem Ipsum</h1>
+            <Feed posts={posts} />
+            <BackToTop />
+          </> 
       }
     </main>
   );

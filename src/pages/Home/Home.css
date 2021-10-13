@@ -1,0 +1,12 @@
+.Home {
+  height: fit-content;
+  width: 78em;
+}
+
+.Home__title {
+  font-family: var(--title-font);
+  font-weight: 400;
+  text-align: center;
+  margin: 2em 0 1em 0;
+  font-size: 6em;
+}

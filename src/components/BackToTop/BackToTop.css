@@ -1,0 +1,31 @@
+.BackToTop {
+  display: block;
+  width: 10em;
+  height: 10em;
+  margin: 0 auto 8em auto;
+  border: 1px solid var(--border-color);
+  padding: .5em;
+}
+
+.BackToTop__button {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--main-bg-color);
+  border:none;
+  cursor: pointer;
+  color: var(--link-color);
+  font-family: var(--body-font);
+  transition: .5s;
+}
+
+.BackToTop__button:hover {
+  color: var(--text-color);
+}
+
+.BackToTop__icon {
+  display: block;
+  font-family: sans-serif;
+  font-size: 3em;
+  line-height: 1em;
+}

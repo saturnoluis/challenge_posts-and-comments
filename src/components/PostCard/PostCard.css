@@ -1,0 +1,31 @@
+.PostCard {
+  color: #fdfff2;
+  font-size: 2.2em;
+  list-style: none;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3em;
+}
+
+.PostCard__title {
+  color: var(--link-color);
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  font-family: var(--title-font);
+  border-bottom: 1px solid transparent;
+  transition: all .5s;
+}
+
+.PostCard__title:hover {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.PostCard__body {
+  color: var(--text-color);
+  font-weight: 300;
+  text-transform: capitalize;
+  font-family: var(--body-font);
+  font-size: .8em;
+  line-height: 1.5em;
+}

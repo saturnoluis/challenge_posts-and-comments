@@ -1,5 +1,23 @@
 .Spinner {
-  height: 2px;
-  width: 100%;
-  background-color: red;
+  height: 3px;
+  background-color: var(--link-color);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: loading-animation;
+  width: 0%;
+  margin: 1px auto;
+}
+
+@keyframes loading-animation {
+  from {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
 }
