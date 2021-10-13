@@ -3,6 +3,7 @@
   color: #ddd;
   font-size: 10px;
   justify-content: center;
+  min-height: 100vh;
   background: rgb(29,27,40);
   background: linear-gradient(0deg, var(--bg-color-2) 0%, var(--bg-color) 60%); 
 }

@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { cleanSingle, requestSingle, selectRequested, selectSingle } from '../../store/slice/single';
 import { selectLoading } from '../../store/slice/loading';
 import Comments from '../../components/Comments';
 import Spinner from '../../components/Spinner';
+
+import './Single.css';
 
 export default function Single ({ match }) {
   const { id } = match.params;
@@ -26,13 +29,18 @@ export default function Single ({ match }) {
   }, [dispatch]);
 
   return (
-    <main data-testid="Single" role="main">
+    <main className="Single" role="main">
       {loading
         ? <Spinner />
         : <>
-            <h1>{single.title}</h1>
-            <p>{single.body}</p>
-            <hr />
+            <article className="Single__post">
+              <h1 className="Single__title">{single.title}</h1>
+              <p className="Single__body">{single.body}</p>
+              <Link className="Single__go-back" to="/">⮘ BACK</Link>
+              <div className="Single__hero">
+                <img src={`https://picsum.photos/id/${single.id}/240/240`} alt={single.title} />
+              </div>
+            </article>
             <Comments postId={single.id} />
           </>
       }

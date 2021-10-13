@@ -1,0 +1,51 @@
+.Single {
+  height: fit-content;
+  width: 78em;
+}
+
+.Single__post {
+  position: relative;
+  margin: 24em 0 10em 0;
+  background-color: var(--main-bg-color);
+  padding: 6em 5em 3em 5em;
+  border: 1px solid var(--border-color);
+}
+
+.Single__title {
+  font-family: var(--title-font);
+  font-size: 4em;
+  text-transform: capitalize;
+}
+
+.Single__body {
+  font-family: var(--body-font);
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
+.Single__hero {
+  position: absolute;
+  top: -18em;
+  border: 1px solid var(--border-color);
+  width: 25em;
+  height: 25em;
+  padding: .5em;
+  background-color: var(--main-bg-color);
+}
+
+.Single__hero img {
+  display: block;
+  margin: .5em;
+  padding: 0;
+}
+
+.Single__go-back {
+  position: absolute;
+  top: -3em;
+  left: -2em;
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 1.6em;
+  font-weight: 800;
+  font-family: var(--title-font);
+}
