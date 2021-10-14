@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Challenge: Posts & Comments
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This coding challenge made in react.js consist in a web application that fetches from a public API that provides posts and comments.
 
-In the project directory, you can run:
+The application presents a list of posts and when any of the items is clicked it shows the list of comments that are associated with that specific post.
 
+It also allows to make a new comment, and change the color theme to a dark or light scheme.
+
+> __A comment about comments:__ When submitting a new comment in a post, an actual API call is made to persist the information but it's not really updated on the server, refreshing the page removes the new comments since they only exist in the redux store.
+
+## Installation
+
+In order to install just clone the repo, cd into the project directory, and run:
+
+### `npm install`
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech-stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* __create-react-app__ - _Boilerplate._
+* __react-router-dom__ - _There's a route for the single post view._
+* __react-redux__ - _State management._
+* Styles are done using vanilla CSS with lightly following the BEM naming convention.
 
-### `npm test`
+## API endpoints and resources used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* https://jsonplaceholder.typicode.com/posts - _Posts._
+* https://jsonplaceholder.typicode.com/posts/1/comments - _Comments in a single post._
+* https://picsum.photos/ - _Used to display a random hero image in the posts._
+* Google fonts
 
-### `npm run build`
+### Visual design decisions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I wanted to keep it simple so a vertical design was appropriate to display all posts, displaying only the title and body of each post in individual cards (I was thinking in the old reddit design).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The selection of colors for both dark and light themes was kind of arbitrary but I wanted the site to feel elegant and neat, I think the color pallette help to accomplish that goal, same for the selection of fonts.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I also added a hero image in the view that displays a single post. I think it helps make the challenge a bit more "complete" and less dull.
 
-### `npm run eject`
+### Implementation decisions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Exploring the source files will be the best approach to explain the implementation, so below I briefly describe the most important files or folders in order to help you understand the gist of it (only what's inside the `src/` folder is worth mentioning here).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* `App.js` - Main wrapper and container for the application, it has the definition of the routes to navigate the app and also handles the theme switcher in it's inner state.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* `App.css` - This file's most important role is to provide the app with the color variables used in each theme.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* `store/` - This folder contains the definition of the redux store and the different slices of it. Also each slice file defines the reducer, actions, and selectors related with that portion of the store.
 
-## Learn More
+* `service/` - Exports several functions that act as wrappers for the fetch API witch was used to reach the service endpoints.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* `pages/`- This folder contains the react components that are used exclusively to render the full view of a page. That is Home (for the home view), and Single (for the post and comments view). These components are the ones used in the router definition inside App.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* `components/` - Any other react component that can be reused in the application to build the UI.
