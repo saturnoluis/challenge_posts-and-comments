@@ -22,7 +22,7 @@ In order to install just clone the repo, cd into the project directory, and run:
 * __create-react-app__ - _Boilerplate._
 * __react-router-dom__ - _There's a route for the single post view._
 * __react-redux__ - _State management._
-* Styles are done using vanilla CSS with lightly following the BEM naming convention.
+* Styles are done using vanilla CSS ~~slightly~~ following the BEM naming convention.
 
 ## API endpoints and resources used
 
@@ -37,11 +37,11 @@ I wanted to keep it simple so a vertical design was appropriate to display all p
 
 The selection of colors for both dark and light themes was kind of arbitrary but I wanted the site to feel elegant and neat, I think the color pallette help to accomplish that goal, same for the selection of fonts.
 
-I also added a hero image in the view that displays a single post. I think it helps make the challenge a bit more "complete" and less dull.
+I also added a hero image in the view for a single post. I think it helps make the visuals feel more "complete" and less dull.
 
 ### Implementation decisions
 
-Exploring the source files will be the best approach to explain the implementation, so below I briefly describe the most important files or folders in order to help you understand the gist of it (only what's inside the `src/` folder is worth mentioning here).
+Exploring the source files will be the best approach to explain the implementation, so below I briefly describe the most important files and folders in order to help you (dear reader) understand the gist of it (only what's inside the `src/` folder is worth mentioning here).
 
 * `App.js` - Main wrapper and container for the application, it has the definition of the routes to navigate the app and also handles the theme switcher in it's inner state.
 
