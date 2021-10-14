@@ -5,6 +5,7 @@
   background-color: var(--main-bg-color);
   padding: 4em;
   margin-bottom: 8em;
+  box-shadow: 0em 0em 8em var(--main-shadow-color);
 }
 
 .CommentsForm__title {

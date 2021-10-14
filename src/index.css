@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-color);
   overflow-y: scroll;
   overflow-x: auto;
 }
@@ -21,19 +20,4 @@ input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   transition-delay: 3600s;
-}
-
-.body--dark {
-  --bg-color: #151515;
-  --bg-color-2: #353535;
-
-  --main-bg-color: #151515;
-  --main-shadow-color: #151515;
-
-  --text-color: #fafafa;
-  --link-color: #f2cf9d;
-  --border-color: #61524c;
-
-  --title-font: 'Alegreya SC', serif;
-  --body-font: 'Merriweather', serif;
 }
