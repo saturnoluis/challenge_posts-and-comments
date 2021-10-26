@@ -54,3 +54,9 @@ Exploring the source files will be the best approach to explain the implementati
 * `pages/`- This folder contains the react components that are used exclusively to render the full view of a page. That is Home (for the home view), and Single (for the post and comments view). These components are the ones used in the router definition inside App.js
 
 * `components/` - Any other react component that can be reused in the application to build the UI.
+
+# Preview
+
+![localhost_3000_post_18](https://user-images.githubusercontent.com/14167280/138789498-a386baee-48c7-401c-915a-3f7425ffcf2e.png)
+
+
