@@ -17,6 +17,8 @@ In order to install just clone the repo, cd into the project directory, and run:
 ### `npm install`
 ### `npm start`
 
+*If you have problems during the install, please use node v16 since that was the version used for the creation of this project.*
+
 ## Tech-stack
 
 * __create-react-app__ - _Boilerplate._
